@@ -1,0 +1,135 @@
+<h1>Listing kine</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ear num</th>
+      <th>Name</th>
+      <th>Birth</th>
+      <th>Sex</th>
+      <th>Owner</th>
+      <th>T1</th>
+      <th>T2</th>
+      <th>T3</th>
+      <th>T4</th>
+      <th>T5</th>
+      <th>T6</th>
+      <th>T7</th>
+      <th>T8</th>
+      <th>T9</th>
+      <th>T10</th>
+      <th>T11</th>
+      <th>T12</th>
+      <th>T13</th>
+      <th>T14</th>
+      <th>T15</th>
+      <th>T16</th>
+      <th>T17</th>
+      <th>T18</th>
+      <th>T19</th>
+      <th>T20</th>
+      <th>T21</th>
+      <th>T22</th>
+      <th>T23</th>
+      <th>T24</th>
+      <th>T25</th>
+      <th>T26</th>
+      <th>T27</th>
+      <th>T28</th>
+      <th>T29</th>
+      <th>T30</th>
+      <th>T31</th>
+      <th>T32</th>
+      <th>T33</th>
+      <th>T34</th>
+      <th>T35</th>
+      <th>T36</th>
+      <th>T37</th>
+      <th>T38</th>
+      <th>T39</th>
+      <th>T40</th>
+      <th>T41</th>
+      <th>T42</th>
+      <th>T43</th>
+      <th>T44</th>
+      <th>T45</th>
+      <th>T46</th>
+      <th>T47</th>
+      <th>T48</th>
+      <th>T49</th>
+      <th>T50</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kine.each do |cow| %>
+      <tr>
+        <td><%= cow.ear_num %></td>
+        <td><%= cow.name %></td>
+        <td><%= cow.birth %></td>
+        <td><%= cow.sex %></td>
+        <td><%= cow.owner_id %></td>
+        <td><%= cow.t1 %></td>
+        <td><%= cow.t2 %></td>
+        <td><%= cow.t3 %></td>
+        <td><%= cow.t4 %></td>
+        <td><%= cow.t5 %></td>
+        <td><%= cow.t6 %></td>
+        <td><%= cow.t7 %></td>
+        <td><%= cow.t8 %></td>
+        <td><%= cow.t9 %></td>
+        <td><%= cow.t10 %></td>
+        <td><%= cow.t11 %></td>
+        <td><%= cow.t12 %></td>
+        <td><%= cow.t13 %></td>
+        <td><%= cow.t14 %></td>
+        <td><%= cow.t15 %></td>
+        <td><%= cow.t16 %></td>
+        <td><%= cow.t17 %></td>
+        <td><%= cow.t18 %></td>
+        <td><%= cow.t19 %></td>
+        <td><%= cow.t20 %></td>
+        <td><%= cow.t21 %></td>
+        <td><%= cow.t22 %></td>
+        <td><%= cow.t23 %></td>
+        <td><%= cow.t24 %></td>
+        <td><%= cow.t25 %></td>
+        <td><%= cow.t26 %></td>
+        <td><%= cow.t27 %></td>
+        <td><%= cow.t28 %></td>
+        <td><%= cow.t29 %></td>
+        <td><%= cow.t30 %></td>
+        <td><%= cow.t31 %></td>
+        <td><%= cow.t32 %></td>
+        <td><%= cow.t33 %></td>
+        <td><%= cow.t34 %></td>
+        <td><%= cow.t35 %></td>
+        <td><%= cow.t36 %></td>
+        <td><%= cow.t37 %></td>
+        <td><%= cow.t38 %></td>
+        <td><%= cow.t39 %></td>
+        <td><%= cow.t40 %></td>
+        <td><%= cow.t41 %></td>
+        <td><%= cow.t42 %></td>
+        <td><%= cow.t43 %></td>
+        <td><%= cow.t44 %></td>
+        <td><%= cow.t45 %></td>
+        <td><%= cow.t46 %></td>
+        <td><%= cow.t47 %></td>
+        <td><%= cow.t48 %></td>
+        <td><%= cow.t49 %></td>
+        <td><%= cow.t50 %></td>
+        <td><%= link_to 'Show', cow %></td>
+        <td><%= link_to 'Edit', edit_cow_path(cow) %></td>
+        <td><%= link_to 'Destroy', cow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cow', new_cow_path %>

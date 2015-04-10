@@ -1,0 +1,237 @@
+<%= form_for(@cow) do |f| %>
+  <% if @cow.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cow.errors.count, "error") %> prohibited this cow from being saved:</h2>
+
+      <ul>
+      <% @cow.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ear_num %><br>
+    <%= f.number_field :ear_num %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :birth %><br>
+    <%= f.date_select :birth %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br>
+    <%= f.text_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_id %><br>
+    <%= f.number_field :owner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :t1 %><br>
+    <%= f.number_field :t1 %>
+  </div>
+  <div class="field">
+    <%= f.label :t2 %><br>
+    <%= f.number_field :t2 %>
+  </div>
+  <div class="field">
+    <%= f.label :t3 %><br>
+    <%= f.number_field :t3 %>
+  </div>
+  <div class="field">
+    <%= f.label :t4 %><br>
+    <%= f.number_field :t4 %>
+  </div>
+  <div class="field">
+    <%= f.label :t5 %><br>
+    <%= f.number_field :t5 %>
+  </div>
+  <div class="field">
+    <%= f.label :t6 %><br>
+    <%= f.number_field :t6 %>
+  </div>
+  <div class="field">
+    <%= f.label :t7 %><br>
+    <%= f.number_field :t7 %>
+  </div>
+  <div class="field">
+    <%= f.label :t8 %><br>
+    <%= f.number_field :t8 %>
+  </div>
+  <div class="field">
+    <%= f.label :t9 %><br>
+    <%= f.number_field :t9 %>
+  </div>
+  <div class="field">
+    <%= f.label :t10 %><br>
+    <%= f.number_field :t10 %>
+  </div>
+  <div class="field">
+    <%= f.label :t11 %><br>
+    <%= f.number_field :t11 %>
+  </div>
+  <div class="field">
+    <%= f.label :t12 %><br>
+    <%= f.number_field :t12 %>
+  </div>
+  <div class="field">
+    <%= f.label :t13 %><br>
+    <%= f.number_field :t13 %>
+  </div>
+  <div class="field">
+    <%= f.label :t14 %><br>
+    <%= f.number_field :t14 %>
+  </div>
+  <div class="field">
+    <%= f.label :t15 %><br>
+    <%= f.number_field :t15 %>
+  </div>
+  <div class="field">
+    <%= f.label :t16 %><br>
+    <%= f.number_field :t16 %>
+  </div>
+  <div class="field">
+    <%= f.label :t17 %><br>
+    <%= f.number_field :t17 %>
+  </div>
+  <div class="field">
+    <%= f.label :t18 %><br>
+    <%= f.number_field :t18 %>
+  </div>
+  <div class="field">
+    <%= f.label :t19 %><br>
+    <%= f.number_field :t19 %>
+  </div>
+  <div class="field">
+    <%= f.label :t20 %><br>
+    <%= f.number_field :t20 %>
+  </div>
+  <div class="field">
+    <%= f.label :t21 %><br>
+    <%= f.number_field :t21 %>
+  </div>
+  <div class="field">
+    <%= f.label :t22 %><br>
+    <%= f.number_field :t22 %>
+  </div>
+  <div class="field">
+    <%= f.label :t23 %><br>
+    <%= f.number_field :t23 %>
+  </div>
+  <div class="field">
+    <%= f.label :t24 %><br>
+    <%= f.number_field :t24 %>
+  </div>
+  <div class="field">
+    <%= f.label :t25 %><br>
+    <%= f.number_field :t25 %>
+  </div>
+  <div class="field">
+    <%= f.label :t26 %><br>
+    <%= f.number_field :t26 %>
+  </div>
+  <div class="field">
+    <%= f.label :t27 %><br>
+    <%= f.number_field :t27 %>
+  </div>
+  <div class="field">
+    <%= f.label :t28 %><br>
+    <%= f.number_field :t28 %>
+  </div>
+  <div class="field">
+    <%= f.label :t29 %><br>
+    <%= f.number_field :t29 %>
+  </div>
+  <div class="field">
+    <%= f.label :t30 %><br>
+    <%= f.number_field :t30 %>
+  </div>
+  <div class="field">
+    <%= f.label :t31 %><br>
+    <%= f.number_field :t31 %>
+  </div>
+  <div class="field">
+    <%= f.label :t32 %><br>
+    <%= f.number_field :t32 %>
+  </div>
+  <div class="field">
+    <%= f.label :t33 %><br>
+    <%= f.number_field :t33 %>
+  </div>
+  <div class="field">
+    <%= f.label :t34 %><br>
+    <%= f.number_field :t34 %>
+  </div>
+  <div class="field">
+    <%= f.label :t35 %><br>
+    <%= f.number_field :t35 %>
+  </div>
+  <div class="field">
+    <%= f.label :t36 %><br>
+    <%= f.number_field :t36 %>
+  </div>
+  <div class="field">
+    <%= f.label :t37 %><br>
+    <%= f.number_field :t37 %>
+  </div>
+  <div class="field">
+    <%= f.label :t38 %><br>
+    <%= f.number_field :t38 %>
+  </div>
+  <div class="field">
+    <%= f.label :t39 %><br>
+    <%= f.number_field :t39 %>
+  </div>
+  <div class="field">
+    <%= f.label :t40 %><br>
+    <%= f.number_field :t40 %>
+  </div>
+  <div class="field">
+    <%= f.label :t41 %><br>
+    <%= f.number_field :t41 %>
+  </div>
+  <div class="field">
+    <%= f.label :t42 %><br>
+    <%= f.number_field :t42 %>
+  </div>
+  <div class="field">
+    <%= f.label :t43 %><br>
+    <%= f.number_field :t43 %>
+  </div>
+  <div class="field">
+    <%= f.label :t44 %><br>
+    <%= f.number_field :t44 %>
+  </div>
+  <div class="field">
+    <%= f.label :t45 %><br>
+    <%= f.number_field :t45 %>
+  </div>
+  <div class="field">
+    <%= f.label :t46 %><br>
+    <%= f.number_field :t46 %>
+  </div>
+  <div class="field">
+    <%= f.label :t47 %><br>
+    <%= f.number_field :t47 %>
+  </div>
+  <div class="field">
+    <%= f.label :t48 %><br>
+    <%= f.number_field :t48 %>
+  </div>
+  <div class="field">
+    <%= f.label :t49 %><br>
+    <%= f.number_field :t49 %>
+  </div>
+  <div class="field">
+    <%= f.label :t50 %><br>
+    <%= f.number_field :t50 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
