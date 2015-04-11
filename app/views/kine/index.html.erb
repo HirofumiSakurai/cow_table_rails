@@ -1,20 +1,13 @@
 <h1>Listing kine</h1>
 
-<%= form_tag kine_path, :method => 'get' do %>
+<form action="http://localhost/kine.json" method="GET">
   <p>
     name: <%= text_field_tag :search, params[:search] %>
     owner: <%= text_field_tag :search_owner, params[:search_owner] %>
     redirect: <%= check_box_tag :redirect, params[:redirect] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
-<% end %>
-
-<form action="http://localhost:3001/yesod.json" method="GET">
-    name: <input name="search" type="text" value="">
-    owner: <input name="search_owner" type="text" value="">
-    <input type="submit" value="yesodへ送信">
 </form>
-
 
 <table>
   <thead>
