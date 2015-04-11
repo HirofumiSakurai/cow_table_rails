@@ -33,4 +33,11 @@ CowTableRails::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  # Specifies the header that your server uses for sending files
+  #config.action_dispatch.x_sendfile_header = "X-Sendfile"
+ 
+  # For nginx:
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 end
+

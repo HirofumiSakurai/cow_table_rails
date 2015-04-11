@@ -77,4 +77,11 @@ CowTableRails::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Specifies the header that your server uses for sending files
+  #config.action_dispatch.x_sendfile_header = "X-Sendfile"
+ 
+  # For nginx:
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 end
+

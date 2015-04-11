@@ -1,10 +1,15 @@
+# coding: utf-8
 class KineController < ApplicationController
   before_action :set_cow, only: [:show, :edit, :update, :destroy]
 
   # GET /kine
   # GET /kine.json
   def index
-    if ! (params[:search].nil? && params[:search_owner].nil?)
+    if (params[:redirect] == "on")
+      response.headers['X-Accel-Redirect'] = "/reproxy/"
+      response.headers['X-reproxy-URL'] = "http://localhost:3001/yesod.json?search=#{params[:search]}&search_owner=#{params[:search_owner]}"
+      render nothing: true
+    elsif ! (params[:search].nil? && params[:search_owner].nil?)
       @kine = Cow.search(params[:search], params[:search_owner])
       @kineHash = @kine.pluck2hash(:id, :name, :ear_num, :birth, :owner_id, :t1, :t2, :t3, :t4, :t5, :t6, :t7, :t8, :t9, :t10) #, :t11, :t12, :t13, :t14, :t15, :t16, :t17, :t18, :t19, :t20, :t21, :t22, :t23, :t24, :t25, :t26, :t27, :t28, :t29, :t30, :t31, :t32, :t33, :t34, :t35, :t36, :t37, :t38, :t39, :t40, :t41, :t42, :t43, :t44, :t45, :t46, :t47, :t48, :t49, :t50, :t51, :t52, :t53, :t54, :t55, :t56, :t57, :t58, :t59, :t60, :t61, :t62, :t63, :t64, :t65, :t66, :t67, :t68, :t69, :t70, :t71, :t72, :t73, :t74, :t75, :t76, :t77, :t78, :t79, :t80, :t81, :t82, :t83, :t84, :t85, :t86, :t87, :t88, :t89, :t90, :t91, :t92, :t93, :t94, :t95, :t96, :t97, :t98, :t99)
 #    @kineArray = @kine.pluck2array(:id, :name, :ear_num, :birth, :owner_id )
@@ -79,3 +84,5 @@ class KineController < ApplicationController
       params.require(:cow).permit(:ear_num, :name, :birth, :sex, :owner_id, :t1, :t2, :t3, :t4, :t5, :t6, :t7, :t8, :t9, :t10, :t11, :t12, :t13, :t14, :t15, :t16, :t17, :t18, :t19, :t20, :t21, :t22, :t23, :t24, :t25, :t26, :t27, :t28, :t29, :t30, :t31, :t32, :t33, :t34, :t35, :t36, :t37, :t38, :t39, :t40, :t41, :t42, :t43, :t44, :t45, :t46, :t47, :t48, :t49, :t50)
     end
 end
+
+
