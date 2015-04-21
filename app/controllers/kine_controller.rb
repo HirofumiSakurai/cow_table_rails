@@ -9,13 +9,27 @@ class KineController < ApplicationController
       response.headers['X-Accel-Redirect'] = "/reproxy/"
       response.headers['X-reproxy-URL'] = "http://localhost:3001/yesod.json?search=#{params[:search]}&search_owner=#{params[:search_owner]}"
       render nothing: true
+    elsif (params[:redirect] == "yesod-sql")
+      response.headers['X-Accel-Redirect'] = "/reproxy/"
+      response.headers['X-reproxy-URL'] = "http://localhost:3002/sql2str?SQL=SELECT+json_agg(kine)+FROM+kine+WHERE+owner_id+%3D+#{params[:search_owner]}"
+      render nothing: true
+    elsif (params[:redirect] == "yesod-sql2")
+      response.headers['X-Accel-Redirect'] = "/reproxy/"
+      response.headers['X-reproxy-URL'] = "http://localhost:3002/sql2str?SQL=WITH+src+AS+%28SELECT+*%2C+daughters%28ear_num%29%2C+ai_logs%28ear_num%29+FROM+kine+WHERE+owner_id+%3D+#{params[:search_owner]}%29+SELECT+json_agg%28src%29+FROM+src%3B"
+      render nothing: true
     elsif (params[:redirect] == "sql")
       sql = <<-SQL
         select array_to_json(array_agg(kine))
         from kine
         where owner_id = 5
       SQL
-
+      render json: ActiveRecord::Base.connection.select_value(sql)
+    elsif (params[:redirect] == "sql2")
+      sql = <<-SQL
+        with src AS (SELECT *, daughters(ear_num), ai_logs(ear_num)  
+                            FROM kine WHERE owner_id = #{params[:search_owner]})
+        select json_agg(src) FROM src;
+      SQL
       render json: ActiveRecord::Base.connection.select_value(sql)
     elsif ! (params[:search].nil? && params[:search_owner].nil?)
       @kine = Cow.search(params[:search], params[:search_owner])
