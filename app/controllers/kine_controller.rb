@@ -21,7 +21,7 @@ class KineController < ApplicationController
       sql = <<-SQL
         select array_to_json(array_agg(kine))
         from kine
-        where owner_id = 5
+        where owner_id = #{params[:search_owner]}
       SQL
       render json: ActiveRecord::Base.connection.select_value(sql)
     elsif (params[:redirect] == "sql2")
