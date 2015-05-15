@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cow no:</strong>
+  <%= @ai_log.cow_no %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @ai_log.date %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @ai_log.state %>
+</p>
+
+<%= link_to 'Edit', edit_ai_log_path(@ai_log) %> |
+<%= link_to 'Back', ai_logs_path %>

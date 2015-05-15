@@ -1,4 +1,6 @@
 CowTableRails::Application.routes.draw do
+  resources :ai_logs
+
   resources :owners
 
   resources :kine

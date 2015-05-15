@@ -1,0 +1,31 @@
+<h1>Listing ai_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cow no</th>
+      <th>Date</th>
+      <th>State</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ai_logs.each do |ai_log| %>
+      <tr>
+        <td><%= ai_log.cow_no %></td>
+        <td><%= ai_log.date %></td>
+        <td><%= ai_log.state %></td>
+        <td><%= link_to 'Show', ai_log %></td>
+        <td><%= link_to 'Edit', edit_ai_log_path(ai_log) %></td>
+        <td><%= link_to 'Destroy', ai_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ai log', new_ai_log_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cow_no: 1
+  date: 2015-05-13
+  state: MyString
+
+two:
+  cow_no: 1
+  date: 2015-05-13
+  state: MyString

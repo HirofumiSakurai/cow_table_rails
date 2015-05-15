@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150410061733) do
+ActiveRecord::Schema.define(version: 20150515095556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ai_logs", force: true do |t|
+    t.integer  "cow_no"
+    t.date     "date"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "kine", force: true do |t|
     t.integer  "ear_num"
@@ -74,6 +82,7 @@ ActiveRecord::Schema.define(version: 20150410061733) do
     t.integer  "t50"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent"
   end
 
   create_table "owners", force: true do |t|

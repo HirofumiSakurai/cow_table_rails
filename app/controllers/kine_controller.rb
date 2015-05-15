@@ -1,6 +1,7 @@
 # coding: utf-8
 class KineController < ApplicationController
   before_action :set_cow, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery except: [:update, :destroy]
 
   # GET /kine
   # GET /kine.json
@@ -44,6 +45,14 @@ class KineController < ApplicationController
   # GET /kine/1
   # GET /kine/1.json
   def show
+    if (params[:redirect] == "sql2")
+      sql = <<-SQL
+        with src AS (SELECT *, daughters(ear_num), ai_logs(ear_num)  
+                     FROM kine WHERE id = #{params[:id]})
+        select json_agg(src) FROM src;
+      SQL
+      render json: ActiveRecord::Base.connection.select_value(sql)
+    end      
   end
 
   # GET /kine/new
