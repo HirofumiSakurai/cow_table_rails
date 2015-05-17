@@ -26,11 +26,19 @@ class KineController < ApplicationController
       SQL
       render json: ActiveRecord::Base.connection.select_value(sql)
     elsif (params[:redirect] == "sql2")
-      sql = <<-SQL
-        with src AS (SELECT *, daughters(ear_num), ai_logs(ear_num)  
+      if (params[:search_owner] == "" )
+        sql = <<-SQL
+          with src AS (SELECT *, daughters(ear_num), ai_logs(ear_num)  
+                            FROM kine )
+          select json_agg(src) FROM src;
+        SQL
+      else
+        sql = <<-SQL
+          with src AS (SELECT *, daughters(ear_num), ai_logs(ear_num)  
                             FROM kine WHERE owner_id = #{params[:search_owner]})
-        select json_agg(src) FROM src;
-      SQL
+          select json_agg(src) FROM src;
+        SQL
+      end
       render json: ActiveRecord::Base.connection.select_value(sql)
     elsif ! (params[:search].nil? && params[:search_owner].nil?)
       @kine = Cow.search(params[:search], params[:search_owner])

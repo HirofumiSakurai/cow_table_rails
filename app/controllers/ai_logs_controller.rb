@@ -5,7 +5,16 @@ class AiLogsController < ApplicationController
   # GET /ai_logs
   # GET /ai_logs.json
   def index
-    @ai_logs = AiLog.all
+    if (params[:redirect] == "sql")
+      sql = <<-SQL
+        WITH src AS (SELECT id, cow_no, date, state, owner_id FROM ai_logs
+                     WHERE owner_id = #{params[:search_owner]})
+        SELECT json_agg(src) FROM src;
+      SQL
+      render json: ActiveRecord::Base.connection.select_value(sql)
+    else
+      @ai_logs = AiLog.all
+    end
   end
 
   # GET /ai_logs/1
