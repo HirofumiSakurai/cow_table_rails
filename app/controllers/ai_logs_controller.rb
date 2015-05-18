@@ -79,6 +79,6 @@ class AiLogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ai_log_params
-      params.require(:ai_log).permit(:cow_no, :date, :state)
+      params.require(:ai_log).permit(:cow_no, :date, :state, :owner_id)
     end
 end

@@ -15,5 +15,10 @@
   <%= @ai_log.state %>
 </p>
 
+<p>
+  <strong>Owner:</strong>
+  <%= @ai_log.owner_id %>
+</p>
+
 <%= link_to 'Edit', edit_ai_log_path(@ai_log) %> |
 <%= link_to 'Back', ai_logs_path %>

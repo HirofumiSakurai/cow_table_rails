@@ -1,30 +1,23 @@
 <h1>Listing kine</h1>
 
-<form action="http://localhost/kine.json" method="GET">
-  <p>
-    name: <%= text_field_tag :search, params[:search] %>
-    owner: <%= text_field_tag :search_owner, params[:search_owner] %>
-    redirect: <%= check_box_tag :redirect, params[:redirect] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-</form>
-
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Ear_num</th>
-      <th>Birth</th>
+      <th>Ear num</th>
       <th>Owner</th>
-      <th>T01</th>
-      <th>T02</th>
-      <th>T03</th>
-      <th>T04</th>
-      <th>T05</th>
-      <th>T06</th>
-      <th>T07</th>
-      <th>T08</th>
-      <th>T09</th>
+      <th>Parent</th>
+      <th>Name</th>
+      <th>Birth</th>
+      <th>Sex</th>
+      <th>T1</th>
+      <th>T2</th>
+      <th>T3</th>
+      <th>T4</th>
+      <th>T5</th>
+      <th>T6</th>
+      <th>T7</th>
+      <th>T8</th>
+      <th>T9</th>
       <th>T10</th>
       <th>T11</th>
       <th>T12</th>
@@ -75,10 +68,12 @@
   <tbody>
     <% @kine.each do |cow| %>
       <tr>
-        <td><%= cow.name %></td>
         <td><%= cow.ear_num %></td>
-        <td><%= cow.birth %></td>
         <td><%= cow.owner_id %></td>
+        <td><%= cow.parent %></td>
+        <td><%= cow.name %></td>
+        <td><%= cow.birth %></td>
+        <td><%= cow.sex %></td>
         <td><%= cow.t1 %></td>
         <td><%= cow.t2 %></td>
         <td><%= cow.t3 %></td>
@@ -140,4 +135,3 @@
 <br>
 
 <%= link_to 'New Cow', new_cow_path %>
-

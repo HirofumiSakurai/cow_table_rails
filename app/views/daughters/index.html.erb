@@ -1,0 +1,27 @@
+<h1>Listing daughters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Owner</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @daughters.each do |daughter| %>
+      <tr>
+        <td><%= daughter.owner_id %></td>
+        <td><%= link_to 'Show', daughter %></td>
+        <td><%= link_to 'Edit', edit_daughter_path(daughter) %></td>
+        <td><%= link_to 'Destroy', daughter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Daughter', new_daughter_path %>

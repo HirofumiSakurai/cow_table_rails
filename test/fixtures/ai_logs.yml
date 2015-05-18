@@ -2,10 +2,12 @@
 
 one:
   cow_no: 1
-  date: 2015-05-13
+  date: 2015-05-18
   state: MyString
+  owner_id: 1
 
 two:
   cow_no: 1
-  date: 2015-05-13
+  date: 2015-05-18
   state: MyString
+  owner_id: 1

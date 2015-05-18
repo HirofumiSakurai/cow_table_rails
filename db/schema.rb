@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517053939) do
+ActiveRecord::Schema.define(version: 20150518044601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,19 +20,24 @@ ActiveRecord::Schema.define(version: 20150517053939) do
     t.integer  "cow_no"
     t.date     "date"
     t.string   "state"
+    t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "owner_id"
   end
 
-  add_index "ai_logs", ["cow_no", "date"], name: "cow_no_idx", order: {"date"=>:desc}, using: :btree
+  create_table "daughters", force: true do |t|
+    t.integer  "owner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "kine", force: true do |t|
     t.integer  "ear_num"
+    t.integer  "owner_id"
+    t.integer  "parent"
     t.string   "name"
     t.date     "birth"
     t.string   "sex"
-    t.integer  "owner_id"
     t.integer  "t1"
     t.integer  "t2"
     t.integer  "t3"
@@ -85,10 +90,7 @@ ActiveRecord::Schema.define(version: 20150517053939) do
     t.integer  "t50"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "parent"
   end
-
-  add_index "kine", ["parent"], name: "parents_idx", using: :btree
 
   create_table "owners", force: true do |t|
     t.string   "name"

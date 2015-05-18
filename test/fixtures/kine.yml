@@ -2,10 +2,11 @@
 
 one:
   ear_num: 1
-  name: MyString
-  birth: 2015-04-10
-  sex: MyString
   owner_id: 1
+  parent: 1
+  name: MyString
+  birth: 2015-05-18
+  sex: MyString
   t1: 1
   t2: 1
   t3: 1
@@ -59,10 +60,11 @@ one:
 
 two:
   ear_num: 1
-  name: MyString
-  birth: 2015-04-10
-  sex: MyString
   owner_id: 1
+  parent: 1
+  name: MyString
+  birth: 2015-05-18
+  sex: MyString
   t1: 1
   t2: 1
   t3: 1

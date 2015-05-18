@@ -18,7 +18,7 @@ class AiLogsControllerTest < ActionController::TestCase
 
   test "should create ai_log" do
     assert_difference('AiLog.count') do
-      post :create, ai_log: { cow_no: @ai_log.cow_no, date: @ai_log.date, state: @ai_log.state }
+      post :create, ai_log: { cow_no: @ai_log.cow_no, date: @ai_log.date, owner_id: @ai_log.owner_id, state: @ai_log.state }
     end
 
     assert_redirected_to ai_log_path(assigns(:ai_log))
@@ -35,7 +35,7 @@ class AiLogsControllerTest < ActionController::TestCase
   end
 
   test "should update ai_log" do
-    patch :update, id: @ai_log, ai_log: { cow_no: @ai_log.cow_no, date: @ai_log.date, state: @ai_log.state }
+    patch :update, id: @ai_log, ai_log: { cow_no: @ai_log.cow_no, date: @ai_log.date, owner_id: @ai_log.owner_id, state: @ai_log.state }
     assert_redirected_to ai_log_path(assigns(:ai_log))
   end
 

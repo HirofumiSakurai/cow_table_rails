@@ -1,0 +1,1 @@
+rails generate scaffold cow ear_num:integer owner_id:integer parent:integer name:string birth:date sex:string t1:integer
