@@ -1,5 +1,6 @@
 class KineController < ApplicationController
   before_action :set_cow, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery except: [:update, :destroy]
 
   # GET /kine
   # GET /kine.json

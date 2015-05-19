@@ -4,7 +4,16 @@ class DaughtersController < ApplicationController
   # GET /daughters
   # GET /daughters.json
   def index
-    @daughters = Daughter.all
+    if (params[:redirect] == "on")
+      sql = <<-SQL
+          WITH src AS (SELECT id, daughters(id)
+                       FROM kine WHERE owner_id = #{params[:search_owner]})
+          SELECT json_agg(src) FROM src;
+      SQL
+      render json: ActiveRecord::Base.connection.select_value(sql)
+    else
+      @daughters = Daughter.all
+    end
   end
 
   # GET /daughters/1
